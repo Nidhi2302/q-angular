@@ -1,0 +1,44 @@
+<div class="navbar-default sidebar p-t-0" role="navigation">
+  <div class="top-left-part">
+   <a class="logo" href="index.html">
+      <img alt="home" class="light-logo" src="../../../assets/images/logo.png">
+    </a>
+  </div>
+  <div class="slimScrollDiv">
+    <div class="sidebar-nav navbar-collapse slimscrollsidebar active">
+      <ul class="nav in" id="side-menu">
+        <li>
+          <a [routerLink]="['/user']" [routerLinkActive]="['active']" class="waves-effect"><i class="linea-icon linea-user fa fa-user" data-icon="v"></i> <span class="hide-menu">User Management</span></a>
+        </li>
+        <li>
+          <a [routerLink]="['/vendor']" [routerLinkActive]="['active']" class="waves-effect"><i class="linea-icon linea-user fa fa-user" data-icon="v"></i> <span class="hide-menu">Vendor Management</span></a>
+        </li>
+        <li>
+            <a [routerLink]="['/coupon']" [routerLinkActive]="['active']" class="waves-effect"><i class="linea-icon linea-bars fa fa-bars" data-icon="v"></i> <span class="hide-menu">Coupon Management</span></a>
+          </li>
+          <li>
+            <a [routerLink]="['/notification']" [routerLinkActive]="['active']" class="waves-effect"><i class="linea-icon linea-flag-checkered fa fa-calendar" data-icon="v"></i> <span class="hide-menu">Notification Management</span></a>
+          </li>
+          <!-- <li>
+            <a [routerLink]="['/reports']"  [routerLinkActive]="['active']" class="waves-effect"><i class="linea-icon linea-flag-checkered fa fa-file" data-icon="v"></i> <span class="hide-menu">Reports</span></a>
+          </li> -->
+          <li class="nav-item">
+              <a class="nav-link collapsed waves-effect"  data-toggle="collapse" data-target="#submenu1" (click)="dropDown()"><i class="linea-icon linea-flag-checkered fa fa-file" data-icon="v"></i> <span class="hidden-sm-down"> Reports</span><i class="fa fa-caret-down" style="margin-left: 10px"></i></a>
+              <div [className]="toggleCollapsed"  id="submenu1" aria-expanded="true">
+                  <ul class="flex-column pl-2 nav">
+                      <li class="nav-item" class="waves-effect"><a class="nav-link py-0" [routerLink]="['/topvendor']"  [routerLinkActive]="['active']" style="margin-left:15px" href="">Top Vendors</a></li>
+                      <li class="nav-item" class="waves-effect"><a class="nav-link py-0" [routerLink]="['/topuser']"  [routerLinkActive]="['active']" style="margin-left:15px" href="">Top User</a></li>
+                      <li class="nav-item" class="waves-effect"><a class="nav-link py-0" [routerLink]="['/totalcoupons']"  [routerLinkActive]="['active']" style="margin-left:15px" href="">Total Coupons</a></li>
+                      <li class="nav-item" class="waves-effect"><a class="nav-link py-0" [routerLink]="['/totalcouponsreferred']"  [routerLinkActive]="['active']" style="margin-left:15px" href="">Reffered Coupons</a></li>
+                      <li class="nav-item" class="waves-effect"><a class="nav-link py-0" [routerLink]="['/totalcouponsredeemed']"  [routerLinkActive]="['active']" style="margin-left:15px" href="">Reedemed Coupons</a></li>
+                  </ul>
+              </div>
+          </li>
+
+          <li>
+            <a [routerLink]="['/']" (click)=logout() class="waves-effect"><i class="fa fa-sign-out"></i> <span class="hide-menu">Logout</span></a>
+          </li>
+      </ul>
+    </div>
+  </div>
+</div>

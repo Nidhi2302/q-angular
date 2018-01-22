@@ -1,0 +1,27 @@
+/* Login- register pages */
+.main-logo{
+	width: 100%;
+	max-width: 100%;
+}
+
+.login-btn{
+	background-color: #6692cd;
+    border: 1px solid #6692cd;
+    color: #fff;
+}
+
+.login-btn:active {
+    background-color: #6692cd;
+    border: 1px solid #6692cd;
+    color:#fff;
+}
+
+img.box-title.m-b-20 {
+    height: 200px;
+    display: block;
+    margin: auto;
+}
+.btn-success[disabled]:focus, .btn-success[disabled]:hover, fieldset[disabled] .btn-success.focus, fieldset[disabled] .btn-success:focus, fieldset[disabled] .btn-success:hover {
+    background-color: #6692cd;
+    border-color: #6692cd;
+}

@@ -1,0 +1,20 @@
+.mapIcon, .listIcon {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.sebm-google-map-container {
+  height: 600px;
+}
+
+.mapEditButton {
+  position: absolute;
+  right: 13px;
+  font-size: 12px;
+}
+
+.mapAdd {
+  float: left;
+  width: 120px;
+  text-align: justify;
+}

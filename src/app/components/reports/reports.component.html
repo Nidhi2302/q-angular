@@ -1,0 +1,189 @@
+<app-leftpanel></app-leftpanel>
+
+<div id="page-wrapper">
+  <div class="container-fluid">
+    <div class="row bg-title">
+      <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+        <h4 class="page-title">Reports</h4>
+      </div>
+    </div>
+  <!-- Campaign listing table --> 
+    <div class="">
+
+        <div class="col-md-12 col-lg-12 col-sm-12" *ngIf="importExportVisible">
+            <div class="col-md-2 col-lg-2 col-sm-2 pull-right">
+                <button class="btn glyphicons glyphicons-user" (click)="export()">Export</button>
+            </div>
+        </div>
+
+        <ul class="nav nav-tabs">
+            <li [ngClass]="{'active':topVendor == true}"><a data-toggle="tab" (click) = "changeTab('Top Vendor')">Top Vendor/Store</a></li>
+            <li [ngClass]="{'active':topEndUser == true}"><a data-toggle="tab" (click) = "changeTab('Top EndUser')">Top EndUser</a></li>
+            <li [ngClass]="{'active':totalCoupons == true}"><a data-toggle="tab" (click) = "changeTab('Total Coupons')">Total Coupons</a></li>
+            <li [ngClass]="{'active':referredCoupons == true}"><a data-toggle="tab" (click) = "changeTab('Referred Coupons')">Referred Coupons</a></li>
+            <li [ngClass]="{'active':redeemedCoupons == true}"><a data-toggle="tab" (click) = "changeTab('Redeemed Coupons')">Redeemed Coupons</a></li>
+        </ul>
+        <!--<div class="col-md-12 col-lg-12 col-sm-12">    
+            <div [hidden]="!isDelayedRunning">  
+                <div class="cssload-speeding-wheel"></div>
+            </div>    
+        </div> -->
+        <div class="tab-content">
+        <!-- Amount Raised  tab -->
+            <div id="amount-raised" *ngIf="topVendor"> 
+              <div class="col-md-12 col-lg-12 col-sm-12">
+                  <div class="table-responsive listView dashboard">
+                    <table class="table table-colored text-capitalize">
+                        <thead>
+                          <tr> 	
+                            <th>Vendor/Store Name</th>
+                            <th>Coupons</th>
+                          </tr>
+                        </thead> 
+                        <tbody>
+                          <tr *ngFor="let vendor of topVendors">
+                                    <td class="txt-oflo">{{ vendor.name }}</td>
+                                    <td class="txt-oflo">{{ vendor.coupons * 100 }}</td> 
+                          </tr>
+                          <tr class="no-data text-center" *ngIf="topVendors.length==0"> 
+                              <td colspan="4">No record found</td>
+                          </tr>
+                        </tbody>
+                    </table>
+                  </div>
+              </div>
+        </div>
+      
+        <div id="top-end-user"   *ngIf="topEndUser">
+            <div class="col-md-12 col-lg-12 col-sm-12">
+                <div class="table-responsive listView dashboard">
+                  <table class="table table-colored text-capitalize">
+                      <thead>
+                        <tr> 	
+                          <th>User Name</th>
+                          <th>Coupons Redeemed</th>
+                        </tr>
+                      </thead> 
+                      <tbody>
+                        <tr *ngFor="let user of topUsers">
+                                  <td class="txt-oflo">{{ user.name }}</td>
+                                  <td class="txt-oflo">{{ user.coupons }}</td> 
+                        </tr>
+                        <tr class="no-data text-center" *ngIf="topUsers.length==0"> 
+                            <td colspan="4">No record found</td>
+                        </tr>
+                      </tbody>
+                  </table>
+                </div>
+              </div>
+        </div>
+
+        <div id="top-end-user" *ngIf="totalCoupons">
+            <div class="col-md-12 col-lg-12 col-sm-12">
+                <div class="table-responsive listView dashboard">
+                  <table class="table table-colored text-capitalize">
+                      <thead>
+                        <tr> 	
+                          <th>Vendor Name</th>
+                          <th>Coupons Created</th>
+                        </tr>
+                      </thead> 
+                      <tfoot>
+                          <tr>
+                            <td class="txt-oflo">Total Coupons In System</td>
+                            <td class="txt-oflo">500</td>
+                          </tr>
+                      </tfoot>
+                      <tbody>
+                        <tr *ngFor="let vendor of topVendors">
+                            <td class="txt-oflo">{{ vendor.name }}</td>
+                            <td class="txt-oflo">{{ vendor.coupons  * 2}}</td> 
+                        </tr>
+                        
+                        <tr class="no-data text-center" *ngIf="topUsers.length==0"> 
+                            <td colspan="4">No record found</td>
+                        </tr>
+                      </tbody>
+                  </table>
+                </div>
+              </div>
+        </div>
+
+        <div id="top-end-user" *ngIf="referredCoupons">
+            <div class="col-md-12 col-lg-12 col-sm-12">
+                <div class="table-responsive listView dashboard">
+                  <table class="table table-colored text-capitalize">
+                      <thead>
+                        <tr> 	
+                          <th>Vendor Name</th>
+                          <th>Coupons Referred</th>
+                        </tr>
+                      </thead> 
+                      <tfoot>
+                          <tr>
+                            <td class="txt-oflo">Total Coupons In System</td>
+                            <td class="txt-oflo">125</td>
+                          </tr>
+                      </tfoot>
+                      <tbody>
+                        <tr *ngFor="let vendor of topVendors">
+                            <td class="txt-oflo">{{ vendor.name }}</td>
+                            <td class="txt-oflo">{{ vendor.coupons/2}}</td> 
+                        </tr>
+                        
+                        <tr class="no-data text-center" *ngIf="topUsers.length==0"> 
+                            <td colspan="4">No record found</td>
+                        </tr>
+                      </tbody>
+                  </table>
+                </div>
+              </div>
+        </div>
+      <!-- Total Redeemed coupons tab -->
+        <div id="top-end-user" *ngIf="redeemedCoupons">
+            <div class="col-md-12 col-lg-12 col-sm-12">
+                <div class="table-responsive listView dashboard">
+                  <table class="table table-colored text-capitalize">
+                      <thead>
+                        <tr> 	
+                          <th>Vendor Name</th>
+                          <th>Coupons Redeemed</th>
+                        </tr>
+                      </thead> 
+                      <tfoot>
+                          <tr>
+                            <td class="txt-oflo">Total Coupons In System</td>
+                            <td class="txt-oflo">50</td>
+                          </tr>
+                      </tfoot>
+                      <tbody>
+                        <tr *ngFor="let vendor of topVendors">
+                            <td class="txt-oflo">{{ vendor.name }}</td>
+                            <td class="txt-oflo">{{ vendor.coupons/5}}</td> 
+                        </tr>
+                        
+                        <tr class="no-data text-center" *ngIf="topUsers.length==0"> 
+                            <td colspan="4">No record found</td>
+                        </tr>
+                      </tbody>
+                  </table>
+                </div>
+              </div>
+        </div>
+  <!-- Campaign only message popup modal -->
+    <div id="showMessage" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+            <h4 class="{{errorMessageClass}}">{{messageToShow}}</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-center {{pagination == true ? 'show' : 'hide'}}">
+      <ul class="pagination ">
+        <li *ngFor="let element of pages" class="{{element.page == pageNumber ? 'active' : ''}}"><a (click) = "pageAction(element.page)" >{{element.page}}</a></li>
+      </ul>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,189 @@
+.table-colored tbody tr:last-child td:first-child{
+    -webkit-border-bottom-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    -moz-border-radius-bottomleft: 10px;
+}
+
+.table-colored tbody tr:last-child td:last-child{
+    -webkit-border-bottom-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    -moz-border-radius-bottomright: 10px;
+}
+
+.table-colored td{
+    text-align: center;
+}
+
+.table-colored th{
+    background: #6692cd;
+    color: #000;
+    font-size: 18px;
+    font-family: Roboto Medium;
+    text-align: center;
+}
+
+.control .table-colored th{
+    background: #2a328d;
+}
+
+
+.table-colored tbody{
+    background : #FFF;
+}
+
+.table-colored tbody tr td{
+    font-family: Roboto Medium;
+    text-transform: capitalize;
+    color: #333;
+    width: 70px;
+}
+
+.table-clolred tbody tr td.emailValue{
+    text-transform: lowercase !important;
+}
+
+.table-colored th:first-child{
+    border-radius: 10px 0 0 0;
+}
+
+.table-colored th:last-child{
+    border-radius: 0 10px 0 0;
+}
+
+button.btnClose {
+    font-size: 15px;
+    font-family: "Roboto Bold";
+    color: #6692cd;
+    text-transform: uppercase;
+    background-color:#000;
+    border-radius: 5px;
+    padding: 6px 20px;
+}
+
+button.save{
+    font-size: 15px;
+    font-family: "Roboto Bold";
+    color: #000;
+    text-transform: uppercase;
+    background-color: #6692cd;
+    border-radius: 5px;
+    padding: 6px 20px;
+    border: none;
+}
+
+.form-group.btn.btn-file {
+    background: #6692cd;
+    width: 100%;
+    border-radius: 5px;
+    padding: 8px 0;
+}
+
+.btn.btn-file label {
+    margin: 0px;
+    padding: 2px;
+    color: #000;
+}
+
+h4.text-danger {
+    font-family: Roboto Medium;
+}
+
+.font-formate{
+    padding: 10px 0px;
+}
+.font-formate a, .font-formate a:hover, .font-formate a.active{
+    color: #000
+}
+
+.rmclr button.btn.glyphicon {
+    background: none;
+    font-size: 23px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+}
+
+button.btn.glyphicons.glyphicons-user{
+    background: #6692cd;
+    color: #000;
+    padding: 10px 30px;
+    border-radius: 7px;
+    width: 100%;
+}
+/*.nav-tabs>li>a{
+    color:#fff;
+}*/
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover{
+    background: #6692cd;
+    font-weight: 500;
+    color: #fff;
+}
+
+.nav-tabs>li>a:hover{
+    background: #6692cd;
+    color:#fff;
+}
+.nav-tabs>li:hover{
+    background: aliceblue;
+}
+
+.listView .active-deactive{
+    width: 35%;
+}
+
+.display-new-line {
+    clear: both;
+}
+
+.font-formates{
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+#users{ 
+    margin: 0px auto;
+    width: 50%;
+}
+
+.alignment {
+    width: 20%;
+}
+
+.text-transform {
+    text-transform: none !important;
+}
+
+#fund-raiser-progress progress, #fund-raiser-progress .progress-indicate{
+    width: 40%;
+    height: 70px;
+}
+.top50 { margin-top:50px !important; }
+.top20 { margin-top:20px !important; }
+
+.target-amount{
+    width: 40%;
+    margin: 0 auto;
+}
+
+.target-per{
+    font-size: 20px;
+}
+
+#fund-raiser-progress select, #fund-raiser-progress h3,#redeemed-events-coupons select,#redeemed-events-coupons h3{
+    margin: 10px;
+    display: inline;
+    max-width: 250px;
+}
+
+#amount-raised select,#amount-raised h4{
+    margin: 0px 10px;
+    display: inline;
+    max-width: 45%;
+}
+
+#fund-raiser-progress h1{
+    margin-top: 50px
+}
+
+#total-earning .datelabel, #amount-raised .datelabel{
+        line-height: 2.428571;
+}

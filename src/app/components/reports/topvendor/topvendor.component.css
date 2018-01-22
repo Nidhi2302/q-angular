@@ -1,0 +1,77 @@
+.table-colored tbody tr:last-child td:first-child{
+    -webkit-border-bottom-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    -moz-border-radius-bottomleft: 10px;
+}
+
+.table-colored tbody tr:last-child td:last-child{
+    -webkit-border-bottom-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    -moz-border-radius-bottomright: 10px;
+}
+
+.table-colored td{
+    text-align: center;
+}
+
+.table-colored th{
+    background: #6692cd;
+    color: #000;
+    font-size: 18px;
+    font-family: Roboto Medium;
+    text-align: center;
+}
+
+.control .table-colored th{
+    background: #2a328d;
+}
+
+
+.table-colored tbody{
+    background : #FFF;
+}
+
+.table-colored tbody tr td{
+    font-family: Roboto Medium;
+    text-transform: capitalize;
+    color: #333;
+    width: 70px;
+}
+
+.table-clolred tbody tr td.emailValue{
+    text-transform: lowercase !important;
+}
+
+.table-colored th:first-child{
+    border-radius: 10px 0 0 0;
+}
+
+.table-colored th:last-child{
+    border-radius: 0 10px 0 0;
+}
+.loadersmall {
+  border: 5px solid #f3f3f3;
+  -webkit-animation: spin 1s linear infinite;
+  animation: spin 1s linear infinite;
+  border-top: 5px solid #555;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: block;
+  margin: auto;
+}
+@keyframes spin{
+  0% {
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+  }
+  100% {
+      -webkit-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+      transform: rotate(360deg);
+  }
+}
+.my-pagination /deep/ .ngx-pagination .current {
+  background: #3667b1 !important;
+}

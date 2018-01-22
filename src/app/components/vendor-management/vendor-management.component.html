@@ -1,0 +1,71 @@
+<app-leftpanel></app-leftpanel>
+
+<div id="page-wrapper">
+  <div class="container-fluid">
+    <div class="row bg-title">
+      <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+        <h4 class="page-title">Vendor Management</h4>
+      </div>
+      <!-- /.col-lg-12 -->
+    </div>
+
+    <div class="row">
+      <div class="col-md-8 col-lg-8 col-sm-4">
+          <div class="form-group">
+            <input type="text" class="form-control" id="search" name="search" [(ngModel)]="searchValue" placeholder="Search by UserName OR Phone OR Email (Press enter for search)" (change)="searchUser()" />
+          </div>
+        </div>
+        <div class="col-md-11 col-lg-11 col-sm-11 success-msg" [hidden]="isSuccess">
+          <span >Vendor deleted successfully.</span>
+          <span (click)="msgClose()" class="close">&times;</span>        
+          </div>
+        <div class="col-md-8 col-lg-8 col-sm-4">
+            <strong>
+                Click on Vendor name to add video url
+            </strong>
+          </div>
+
+      <div class="col-md-12 col-lg-12 col-sm-12">
+          <div [hidden]="!isDelayedRunning">  
+            <div class="cssload-speeding-wheel"></div>
+          </div>  
+         
+          <div class="table-responsive listView dashboard">
+            <table class="table table-colored">
+              <thead>
+                <tr>
+                    <th>No.</th>
+                  <th>Vendor Name</th>
+                  <th>Email</th>
+                  <th>Phone</th>
+                  <th class="active-deactive">Block/UnBlock</th>
+                  <th class="active-deactive">Verified</th>
+                  <th>Delete</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr  *ngFor="let vendor of vendors | paginate: {id: 'server', itemsPerPage: perPageItem, currentPage: currentPageNumber,totalItems: totalVendor};let i=index">
+                  <td class="txt-oflo">{{((currentPageNumber-1)*10)+i+1}}</td>
+                  <td (click)="openNewDialog(vendor)" class="txt-oflo"><a>{{vendor.username}}</a></td>
+                  <td class="txt-oflo">{{vendor.email}}</td>
+                  <td class="txt-oflo">{{vendor.phonenumber}}</td>
+                  <td>
+                    <ui-switch (change)="changeBlockStatus($event,vendor._id)" [checked]="vendor.isBlocked"></ui-switch>
+                  </td>
+                  <td>
+                    <ui-switch (change)="changeVerificationStatus($event,vendor._id)" [checked]="vendor.verified"></ui-switch>
+                  </td>
+                  <td><img (click)="deleteUser(vendor,currentPageNumber)" width="16px" src="assets/images/delete.png" class="delete-icon"/></td>
+                </tr>
+                <tr class="no-data text-center" *ngIf="vendors.length==0">
+                  <td colspan="7">No record found</td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="text-center">
+                <div class="loadersmall" [ngClass]="{ 'hidden': !loading }"></div>
+                <pagination-controls class="my-pagination" (pageChange)="getPage($event)" id="server"></pagination-controls>
+            </div>
+          </div>
+      </div>
+    </div>

@@ -1,0 +1,11 @@
+.top-left-part .light-logo{
+	width:30%;
+}
+
+#side-menu li a span{
+	font-size: 12px;
+}
+
+#side-menu > li > a.active i {
+    color: rgb(102, 146, 205);
+}
